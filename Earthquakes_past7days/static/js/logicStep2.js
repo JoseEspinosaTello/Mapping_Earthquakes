@@ -79,6 +79,7 @@ L.control.layers(baseMaps).addTo(map);
 
 
 // Retrieve the earthquake GeoJSON data.
+//json data is read into the function stored in data.
 
 d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function(data) {
 
@@ -87,7 +88,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
 
 		
 		// We turn each feature into a circleMarker on the map.
-		
+		//function is standardized latlng will know to pull the coordinates from json data
 		pointToLayer: function(feature, latlng) {
 					console.log(data);
 					return L.circleMarker(latlng);
